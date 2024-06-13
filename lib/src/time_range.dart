@@ -6,7 +6,7 @@ typedef TimeRangeSelectedCallback = void Function(TimeRangeResult? range);
 
 class TimeRange extends StatefulWidget {
   TimeRange({
-    Key? key,
+    super.key,
     required this.timeBlock,
     required this.onRangeCompleted,
     required this.firstTime,
@@ -25,11 +25,10 @@ class TimeRange extends StatefulWidget {
     this.textStyle,
     this.activeTextStyle,
     this.alwaysUse24HourFormat = false,
-  })  : assert(
+  }) : assert(
           lastTime.after(firstTime),
           'lastTime can not be before firstTime',
-        ),
-        super(key: key);
+        );
 
   final int timeStep;
   final int timeBlock;
